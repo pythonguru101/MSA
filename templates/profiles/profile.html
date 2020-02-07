@@ -17,10 +17,8 @@
 
           <div>
             <p><label>Name:</label>{{ profile.first_name }} {{ profile.last_name }}</p>
-            <p><label>Handicap:</label>{{ profile.handicap|default_if_none:"(empty)" }}</p>
             <p><label>Birthday:</label>{{ profile.birthday|default_if_none:"(empty)" }}</p>
             <p><label>Location:</label>{{ profile.location|default_if_none:"(empty)" }}</p>
-            <p><label>Years of Experience:</label>{{ profile.years_of_experience }}</p>
 
             <button class="btn btn-primary gap-top-big btn-switch-to-form">Change profile</button>
           </div>
@@ -42,9 +40,6 @@
           {% endif %}
 
           <form method="post" enctype="multipart/form-data">{% csrf_token %}
-{#            {% if user.photo_url|length > 0 %}#}
-{#              <img src="{{ profile.photo_url }}" alt="No Photo" id="user-photo">#}
-{#            {% endif %}#}
             <!-- photo -->
             <div class="form-group">
               <label for="{{ form.photo.id_for_label }}">{{ form.photo.label|safe }}
@@ -57,24 +52,18 @@
             <div style="display: flex; justify-content: space-between">
               <div class="form-group">
                 <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label|safe }}
-                  {% if form.first_name.field.required %}<span class="required" aria-required="true"> * </span>{% endif %}
+                  {% if form.first_name.field.required %}
+                    <span class="required" aria-required="true"> * </span>{% endif %}
                 </label>
                 {{ form.first_name }}
               </div>
               <div class="form-group">
                 <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label|safe }}
-                  {% if form.last_name.field.required %}<span class="required" aria-required="true"> * </span>{% endif %}
+                  {% if form.last_name.field.required %}
+                    <span class="required" aria-required="true"> * </span>{% endif %}
                 </label>
                 {{ form.last_name }}
               </div>
-            </div>
-
-            <!-- handicap -->
-            <div class="form-group">
-              <label for="{{ form.handicap.id_for_label }}">{{ form.handicap.label|safe }}
-                {% if form.handicap.field.required %}<span class="required" aria-required="true"> * </span>{% endif %}
-              </label>
-              {{ form.handicap }}
             </div>
 
             <!-- birthday -->
@@ -91,14 +80,6 @@
                 {% if form.location.field.required %}<span class="required" aria-required="true"> * </span>{% endif %}
               </label>
               {{ form.location }}
-            </div>
-
-            <!-- years_of_experience -->
-            <div class="form-group">
-              <label for="{{ form.years_of_experience.id_for_label }}">{{ form.years_of_experience.label|safe }}
-                {% if form.years_of_experience.field.required %}<span class="required" aria-required="true"> * </span>{% endif %}
-              </label>
-              {{ form.years_of_experience }}
             </div>
 
             <div class="form-group" style="display: flex; justify-content: flex-end">

@@ -67,7 +67,11 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="{% if user.is_authenticated %}{% url 'core:report' %}{% else %}{% url 'core:home' %}{% endif %}">
+    {% if user.is_authenticated %}
+      <label class="title"> Logged in MSA.</label>
+    {% else %}
       <label class="title">Monitoring System API</label>
+    {% endif %}
     </a>
   </div>
 

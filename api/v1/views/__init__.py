@@ -1,2 +1,2 @@
-from .core import ClubInfoView
+from .core import SystemInfoView
 

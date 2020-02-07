@@ -10,12 +10,10 @@ import django
 
 
 class User(AbstractUser):
-    handicap = models.CharField(_('Handicap'), max_length=255, null=True, blank=True)
     photo = models.ImageField(_('Photo'), upload_to='userphotos/', null=True, blank=True)
 
     birthday = models.DateField(_('Birthday'), null=True, blank=True)
     location = models.CharField(_('Location'), max_length=255, null=True, blank=True)
-    years_of_experience = models.IntegerField(_('Years of Experience'), default=0)
     creation_time = models.DateTimeField(_('Creation Time'), default=django.utils.timezone.now)
 
     @property
