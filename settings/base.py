@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     # inner apps
     'core',
-    'constant',
     'profiles',
 ]
 
