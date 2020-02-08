@@ -1,0 +1,4 @@
+============== token ==================
+curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -i 'http://localhost:8000/api/v1/o/token/' --data '{"username":"testapp@testapp.com","client_secret":"","client_id":"testapp@testapp.com","grant_type":"password","password":"testapp"}'
+============= monitor/system_info/ ================
+curl -X GET -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: bearer z7oJRJ1jDuHV51vuxiyJZpbMUIoNd7' -i 'http://localhost:8000/api/v1/monitor/system_info/'

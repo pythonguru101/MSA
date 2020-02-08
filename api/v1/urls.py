@@ -13,7 +13,7 @@ oauth2_endpoint_views = [
 
 urlpatterns = [
     # club info
-    url(r'^practice/club_info/$', SystemInfoView.as_view()),
+    url(r'^monitor/system_info/$', SystemInfoView.as_view()),
     # oauth2
     url(r'^o/', include(oauth2_endpoint_views)),
 ]
