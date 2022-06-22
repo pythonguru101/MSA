@@ -21,7 +21,7 @@ Jinja2==2.9.6
 jsonpointer==1.14
 jsonschema==2.6.0
 MarkupSafe==1.0
-numpy==1.14.3
+numpy==1.22.0
 oauthlib==2.0.7
 olefile==0.44
 openapi-codec==1.3.2
